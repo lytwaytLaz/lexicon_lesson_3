@@ -5,13 +5,25 @@ package lesson_3_1;
  * @version 1.0
  * @since 2016-06-01
  */
+
+
+class HelloRunnable2 implements Runnable {
+    //@Override bör alltid vara med
+    @Override
+    public void run(){
+        System.out.println("Hello from a thread!");
+    }
+}
+
 public class Main {
     public static void main(String[] args) {
-        new TestRunnable().run();
+        Thread runner = new Thread(new HelloRunnable2());
+        runner.start();
 
-//        Thread runner;
-//        runner = new Thread(new TestRunnable());
-//        runner.start();
+//        // or short version
+//        (new Thread(new HelloRunnable2())).start();
+
+
     }
 
 }
