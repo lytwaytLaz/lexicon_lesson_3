@@ -17,10 +17,18 @@ class HelloRunnable2 implements Runnable {
 
 public class Main {
     public static void main(String[] args) {
-        Thread runner = new Thread(new HelloRunnable2());
-        runner.start();
+        HelloRunnable2 runner = new HelloRunnable2();
+        Thread threader1 = new Thread(runner);
+        threader1.start();
+        System.out.print(threader1.getName() + ": ");
 
-//        // or short version
+
+//        //shorter version
+//        Thread threader2 = new Thread(new HelloRunnable2());
+//        threader2.start();
+//        System.out.print(threader2.getName() + ": ");
+//
+//        // or even shorter version, cannot get name this way
 //        (new Thread(new HelloRunnable2())).start();
 
 

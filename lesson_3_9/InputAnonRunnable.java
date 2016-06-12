@@ -15,8 +15,16 @@ public class InputAnonRunnable {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                System.out.println(args[0]);
+                System.out.println(args[0] + "One");
             }
         }).start();
+
+        // lambda version
+        Runnable task1 = () -> { System.out.println(args[0] + "Two"); };
+        Thread thread1 = new Thread(task1);
+        thread1.start();
+
+        // or compressed lamnda version
+        new Thread(() -> { System.out.println(args[0] + "Three");}).start();
     }
 }

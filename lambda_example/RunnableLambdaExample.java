@@ -2,7 +2,7 @@ package lambda_example;
 
 /**
  * This simple program demonstrates how to use Lambda expressions to create
- * and run threads.
+ * and run Threads.
  *
  * @author www.codejava.net
  */
